@@ -20,25 +20,39 @@
       <h2>Request a Design</h2>
       <p>Fill out the form below for Logos, Overlays, or Liveries.</p>
 
-      <form class="order-form">
+      <form
+        action="https://formspree.io/f/xgolnyqo"
+        method="POST"
+        class="order-form"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Design Request from Voltaross.io!"
+        />
+
         <label>Name</label>
-        <input type="text" placeholder="Your Name" required />
+        <input type="text" name="name" placeholder="Your Name" required />
 
         <label>Email</label>
-        <input type="email" placeholder="Your Email" required />
+        <input type="email" name="email" placeholder="Your Email" required />
 
         <label>Service Type</label>
-        <select>
-          <option>Custom Logo</option>
-          <option>Stream Overlay Pack</option>
-          <option>Vehicle Livery</option>
+        <select name="service">
+          <option value="Logo">Custom Logo</option>
+          <option value="Overlay">Stream Overlay Pack</option>
+          <option value="Livery">Vehicle Livery</option>
         </select>
 
         <label>Project Details</label>
         <textarea
+          name="details"
           placeholder="Describe your colors, style, and ideas..."
           rows="6"
+          required
         ></textarea>
+
+        <input type="text" name="_gotcha" style="display: none" />
 
         <button type="submit" class="btn">Send Request</button>
       </form>

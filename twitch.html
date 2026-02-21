@@ -18,20 +18,15 @@
 
     <section class="content-page">
       <h2>Live on Twitch</h2>
-      <div id="twitch-player"></div>
-
-      <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-
-      <script type="text/javascript">
-        var options = {
-          width: "100%",
-          height: 480,
-          channel: "voltaross",
-          // This part is the "magic" fix for local testing
-          parent: ["localhost", "127.0.0.1"],
-        };
-        var player = new Twitch.Player("twitch-player", options);
-      </script>
+      <div class="video-container">
+        <iframe
+          src="https://player.twitch.tv/?channel=voltaross&parent=localhost"
+          height="480"
+          width="854"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
       <p>
         <a href="https://twitch.tv/voltaross" target="_blank" class="btn"
           >Open in Twitch App</a
