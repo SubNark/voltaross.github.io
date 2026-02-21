@@ -3,59 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voltaross | Order Design</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Request | VOLTAROSS</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
       <div class="logo">VOLTAROSS</div>
-      <ul>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
         <li><a href="twitch.html">Twitch</a></li>
-        <li><a href="form.html">Order Design</a></li>
+        <li><a href="form.html">Request</a></li>
       </ul>
     </nav>
 
-    <section class="content-page">
-      <h2>Request a Design</h2>
-      <p>Fill out the form below for Logos, Overlays, or Liveries.</p>
-
-      <form
-        action="https://formspree.io/f/xgolnyqo"
-        method="POST"
-        class="order-form"
-      >
-        <input
-          type="hidden"
-          name="_subject"
-          value="New Design Request from Voltaross.io!"
-        />
-
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Your Name" required />
-
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Your Email" required />
-
-        <label>Service Type</label>
-        <select name="service">
-          <option value="Logo">Custom Logo</option>
-          <option value="Overlay">Stream Overlay Pack</option>
-          <option value="Livery">Vehicle Livery</option>
-        </select>
-
-        <label>Project Details</label>
-        <textarea
-          name="details"
-          placeholder="Describe your colors, style, and ideas..."
-          rows="6"
-          required
-        ></textarea>
-
-        <input type="text" name="_gotcha" style="display: none" />
-
-        <button type="submit" class="btn">Send Request</button>
-      </form>
+    <section class="section-container">
+      <div class="glass-card">
+        <h2>START YOUR <span class="highlight">PROJECT</span></h2>
+        <form
+          action="https://formspree.io/f/xgolnyqo"
+          method="POST"
+          class="order-form"
+        >
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <select name="service" id="service-dropdown" class="full-width">
+            <option value="" disabled selected>Select a Service</option>
+            <option value="logo">Logo Design</option>
+            <option value="pro">Stream Overlay (Pro Bundle)</option>
+            <option value="web">Website Development</option>
+            <option value="livery">Car Livery</option>
+          </select>
+          <textarea
+            name="message"
+            class="full-width"
+            rows="5"
+            placeholder="Project details..."
+            required
+          ></textarea>
+          <button type="submit" class="btn">SUBMIT REQUEST</button>
+        </form>
+      </div>
     </section>
+
+    <script src="script.js"></script>
+    <script>
+      // AUTO-SELECT SERVICE LOGIC
+      window.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const selectedService = params.get("service");
+        if (selectedService) {
+          const dropdown = document.getElementById("service-dropdown");
+          if (dropdown) {
+            dropdown.value = selectedService;
+          }
+        }
+      });
+    </script>
   </body>
 </html>

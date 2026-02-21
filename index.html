@@ -3,26 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voltaross | Home</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>VOLTAROSS | Creative Studio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <nav>
       <div class="logo">VOLTAROSS</div>
-      <ul>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
         <li><a href="twitch.html">Twitch</a></li>
-        <li><a href="form.html">Order Design</a></li>
+        <li><a href="form.html">Request</a></li>
       </ul>
     </nav>
 
     <header class="hero">
-      <h1>High-End Graphics for Gamers</h1>
-      <p>Logos, Overlays, and Custom Liveries by Voltaross.</p>
-      <div class="hero-btns">
-        <a href="form.html" class="btn">Start a Project</a>
-        <a href="twitch.html" class="btn secondary">Watch Me Work</a>
+      <h1 data-aos="fade-up" data-aos-duration="1000">
+        VISUAL <span class="highlight">DOMINANCE</span>
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        High-End Graphics & Web Solutions for Creators.
+      </p>
+      <div style="margin-top: 30px" data-aos="fade-up" data-aos-delay="400">
+        <a href="pricing.html" class="btn btn-outline"
+          >VIEW PRICING & SERVICES</a
+        >
       </div>
     </header>
+
+    <section class="section-container">
+      <h2 data-aos="fade-right">PORTFOLIO</h2>
+      <div class="portfolio-grid" data-aos="fade-up">
+        <div class="portfolio-item">
+          <img src="images/EsportsLogo.png" alt="Logo" />
+          <div class="portfolio-overlay"><span>ESPORTS LOGO</span></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/gt3.png" alt="Livery" />
+          <div class="portfolio-overlay"><span>GT3 LIVERY</span></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+      AOS.init({ once: true });
+    </script>
   </body>
 </html>
